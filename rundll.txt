@@ -1,0 +1,1 @@
+rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell.exe -noexit -command For($i=0;$i -lt 2;$i++){Write-Host $i}")
