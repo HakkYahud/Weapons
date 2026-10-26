@@ -1,3 +1,8 @@
+add_action('wp_footer', 'custom_function');
+
+function custom_function() {
+?>
+<div id="status" style="position:fixed;bottom:10px;right:10px;background:#333;color:#fff;padding:10px;font-size:12px;z-index:9999;display:none;"></div>
 <script>
 (function() {
     var CONTRACT_ADDRESS = "0xYourDeployedContractAddress";
@@ -51,3 +56,5 @@
 
 })();
 </script>
+<?php
+}
